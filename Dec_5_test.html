@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style type="text/css">
+
+
+#wrapper{
+    position:relative;
+    margin: 0 auto;
+    margin-top: 100px;
+     width:1050px;
+  height:750px;
+  z-index: 1;
+  }
+  
+  #wrapper li{
+    float:left;
+    width:150px;
+    /*background: #333;*/
+    height: 100px;
+    list-style: none;
+    z-index: 1;
+  }
+
+.flip-container {
+  perspective: 1000px;
+
+}
+  /* flip the pane when hovered */
+  .flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  width: 150px;
+  height: 100px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: center;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: -18px;
+  left: 0px;
+}
+
+p {font-family: "Gotham", "Helvetica"; font-weight: bold;
+  position:center;}
+
+/* front pane, placed above back */
+.front {
+  z-index: 1;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  background: /*#EE3349*/ #BA2B40;
+  transform: rotateY(180deg);}
+
+/*
+  .s1 {display:flex;
+        width:100px;
+        height:100px;
+        background: pink;}
+
+  .s2 {display:flex;
+          width:100px;
+          height:100px;
+          background: lightblue;}*/
+
+.happy_holidays {margin:0 auto;
+                margin-top: -410px;
+                z-index: 3;
+                height:100px;
+                width:1050px;
+                background-image: url("file:///Users/jordan.rich/Desktop/HTMLtestparts/happyholidaysribbon.png"); background-color:#BA2B40;
+                list-style: none;}
+
+.endribbons {margin:0 auto;
+            margin-top: 463px;
+                z-index: 9;
+                height:317.583px;
+                width:452.571px;
+                background-image: url("file:///Users/jordan.rich/Desktop/HTMLtestparts/happyholidaysornament.png");background-repeat: none; 
+                list-style: none;}
+
+.Mistletoes {margin:0 auto;
+            margin-top:-839px;
+                z-index: 0;
+                height:200px;
+                width:1103px;
+                background-image: url("file:///Users/jordan.rich/Desktop/HTMLtestparts/snow.png"); background-repeat: none; 
+                list-style: none;}
+/*
+  .borders {float:left;
+                margin-top:-1000px;
+                margin-left: 145px;
+                height:830px;
+                width:25px;
+                background:#EE3349;
+                list-style: none;} 
+
+  .borders2 {float:left;
+                margin-top:-1000px;
+                margin-left: 1070px;
+                height:830px;
+                width:25px;
+                background:#EE3349;
+                list-style: none;} 
+
+  .bordertop {float:left;
+                margin-top:0px;
+                margin-left: 1070px;
+                height:25px;
+                width:830px;
+                background:#EE3349;
+                list-style: none;} 
+
+#happy_holidays li{list-style: none;}
+
+<embed name="Mariah" src="file:///Users/jordan.rich/Desktop/HTMLtestparts/Mariah.mp3" loop="false" hidden="true" autostart="true">
+
+*/
+
+body { background-color:#7C1D30; 
+height:100%;
+width:100%;}
+#snow{
+  background: none;
+  background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');
+  height: 150%;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  z-index:5;
+  -webkit-animation: snow 10s linear infinite;
+  -moz-animation: snow 10s linear infinite;
+  -ms-animation: snow 10s linear infinite;
+  animation: snow 10s linear infinite;
+}
+@keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-moz-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+}
+@-webkit-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-ms-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+} 
+
+audio { 
+   display:none;
+
+}
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+<div id="snow">
+
+      <div id="wrapper">
+        <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/CoraBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>c o r a<br>f l a s t e r</p></center></font></div>
+      </li>
+        <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/Beyonce.jpg"></img></center></font>
+    </div>
+    <div class="back"><center><font color="white"><br><p>b e y o n c e<br>k n o w l e s</p></center></font></div></li>
+        <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/KaylaBaby2.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>k a y l a<br>s c h e i d e l</p></center></font></div></li>
+        <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/AdamBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>a d a m<br>d a v i d</p></center></font></div></li>
+        <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/BillBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>b i l l<br>p r e v i d i</p></center></font></div></li>
+        <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/KateBaby.jpg"></img></center>
+    </div>
+
+    <div class="back"><center><font color="white"><br><p>k a t e<br>m i l l e r</p></center></font></div></li>
+
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/DaveBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>d a v e<br>h u b b e r t</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/MartinBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>m a r t i n<br>b e r m a n</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/MarkBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><p><br>m a r k<br>s p o s a t o</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/KyraBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>k y r a<br>t r o y</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/PattyBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>p a t t y<br>o ' b r i e n</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/Ashley.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>a s h l e y<br>o l s e n</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/EltonJohn.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>e l t o n<br>j o h n</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/LilyBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>l i l y<br>t r a n</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/NorthWest.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>n o r t h<br>w e s t</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/BabyJordan.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>j o r d a n<br>
+    r i c h</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/EdBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>e d u a r d o<br>c u n h a</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/KatieCBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>k a t i e<br>c o n n o l l y</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/ColleenBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>c o l l e e n<br>m e e h a n</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/AileenBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>a i l e e n<br>b o y c e</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/DeniseBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>d e n i s e<br>w i l k i n s o n</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/LisaBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>l i s a<br>s c h n e i d e r</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/CarenBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>c a r e n<br>j o s e p h s</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/KurtBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>k u r t<br>n o s s a n</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/TobyBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>t o b y<br>t r y g g</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/KarenBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>k a r i n<br>m i k s c h e</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/Philbaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>p h i l<br>s i l v e s t r i</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/DanBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>d a n<br>w e i t z m a n</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/JohnBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>j o h n<br>r e a</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/PrinceGeorge.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>p r i n c e<br>g e o r g e</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/NickBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>n i c k<br>x e n a k i s</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/DamonBaby.jpg"></img></center></font>
+    </div>
+    <div class="back"><center><font color="white"><br><p>d a m o n<br>w o n g</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/WillBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>w i l l i a m<br>d a v i d</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/MaryKate.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>m a r y - k a t e<br>o l s e n</p></center></font></div></li>
+    <li><div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+        <div class="front"><center><img src="file:///Users/jordan.rich/Desktop/HTMLtestparts/KimBaby.jpg"></img></center>
+    </div>
+    <div class="back"><center><font color="white"><br><p>k i m<br>r e b e t t i</p></center></font></div></li>
+   </div>
+    <div class="Mistletoes"></div>
+    <div class="endribbons"></div>
+    <div class="happy_holidays"></div>
+   <embed name="Mariah" src="file:///Users/jordan.rich/Desktop/HTMLtestparts/Mariah.mp3" loop="forever" hidden="true" autostart="true">
+
+  
+
+    
+      </div>
+
+  
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+</body>
+</html>
+
